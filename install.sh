@@ -27,9 +27,10 @@ echo "Setup portable SSD"
 echo ""
 sudo mkdir /mnt/Samsung_T5
 sudo mount /dev/sda1 /mnt/Samsung_T5 -o uid=1000,gid=1000,umask=000
+sudo mkdir -p /mnt/Samsung_T5/torrents-incomplete
+sudo mkdir -p /mnt/Samsung_T5/torrents-complete
+sudo chown -R victor:victor /mnt/Samsung_T5/torrents-*
 ls -l /mnt/Samsung_T5
-sudo mkdir -p /mnt/Samsung_T5/torrents
-sudo chown -R victor:victor /mnt/Samsung_T5/torrents
 
 # startup script
 echo ""
