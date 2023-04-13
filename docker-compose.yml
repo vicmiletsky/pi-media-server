@@ -29,8 +29,8 @@ services:
       - PGID=1000
       - VERSION=docker
     volumes:
-      - /mnt:/mnt
       - plex_data:/config
+      - /mnt:/mnt
     ports:
       - 32400:32400
     logging:
@@ -45,8 +45,8 @@ services:
       - PGID=1000
       - TZ=Europe/Kyiv
     volumes:
-      - /mnt:/mnt
       - transmission_data:/config
+      - /mnt:/mnt
       - ./transmission/settings.json:/var/lib/transmission-daemon/info/settings.json:ro
       - ./transmission/settings.json:/defaults/settings.json:ro
       - ./transmission/settings.json:/config/settings.json:ro
