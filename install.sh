@@ -1,14 +1,3 @@
-# zram
-echo ""
-echo "Install zram"
-echo ""
-git clone https://github.com/StuartIanNaylor/zram-swap-config
-cd zram-swap-config
-chmod +x install.sh && sudo ./install.sh
-cd ..
-rm -rf zram-swap-config
-cat zram/config.conf | sudo tee /etc/zram-swap-config.conf
-
 # docker
 echo ""
 echo "Install docker"

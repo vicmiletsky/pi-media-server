@@ -1,10 +1,5 @@
 # pi-media-server
 
 ```bash
-sudo apt-get update
-sudo apt-get install git -y
-cd ~
-git clone https://github.com/vicmiletsky/pi-media-server.git
-cd pi-media-server
-bash install.sh
+cd ~ && bash <(curl -s https://raw.githubusercontent.com/vicmiletsky/pi-media-server/main/init.sh)
 ```
