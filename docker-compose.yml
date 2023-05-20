@@ -4,6 +4,8 @@ services:
   rpi-monitor:
     image: chrborg/rpi-monitor:latest
     container_name: rpi-monitor
+    environment:
+      - TZ=Europe/Kiev
     volumes:
       - /opt/vc:/opt/vc
       - /boot:/boot
@@ -31,6 +33,7 @@ services:
       - PUID=1000
       - PGID=1000
       - VERSION=docker
+      - TZ=Europe/Kiev
     volumes:
       - plex_data:/config
       - /mnt:/mnt
@@ -67,7 +70,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Kyiv
+      - TZ=Europe/Kiev
     volumes:
       - jackett_data:/config
       - /mnt/Samsung_T5/:/downloads
@@ -83,7 +86,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EEST
+      - TZ=Europe/Kiev
     volumes:
       - sonarr_data:/config
       - /mnt:/mnt
@@ -99,7 +102,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EEST
+      - TZ=Europe/Kiev
     volumes:
       - radarr_data:/config
       - /mnt:/mnt
