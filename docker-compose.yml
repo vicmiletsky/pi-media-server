@@ -2,7 +2,7 @@ version: "3"
 services:
 
   rpi-monitor:
-    image: michaelmiklis/rpi-monitor
+    image: chrborg/rpi-monitor:latest
     container_name: rpi-monitor
     volumes:
       - /opt/vc:/opt/vc
@@ -11,15 +11,17 @@ services:
       - /etc:/dockerhost/etc:ro
       - /proc:/dockerhost/proc:ro
       - /usr/lib:/dockerhost/usr/lib:ro
+      - /mnt/Samsung_T5:/mnt/Samsung_T5:ro
     devices:
-      - "/dev/vchiq:/dev/vchiq" 
-      - "/dev/vcsm-cma:/dev/vcsm"  
+      - "/dev/vchiq:/dev/vchiq"
+      - "/dev/vcsm-cma:/dev/vcsm"
+      - "/dev/sda1:/dev/sda1"
     ports:
       - 8888:8888
     logging:
       driver: none
     #restart: unless-stopped
-  
+
   plex:
     image: linuxserver/plex
     container_name: plex
@@ -36,7 +38,7 @@ services:
     logging:
       driver: none
     #restart: unless-stopped
-  
+
   transmission:
     image: linuxserver/transmission
     container_name: transmission
@@ -57,7 +59,7 @@ services:
     logging:
       driver: none
     #restart: unless-stopped
-  
+
   jackett:
     image: linuxserver/jackett
     container_name: jackett
@@ -73,7 +75,7 @@ services:
     logging:
       driver: none
     #restart: unless-stopped
-  
+
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -89,7 +91,7 @@ services:
     logging:
       driver: none
     #restart: unless-stopped
-  
+
   radarr:
     image: linuxserver/radarr
     container_name: radarr
@@ -105,7 +107,7 @@ services:
     logging:
       driver: none
     #restart: unless-stopped
-    
+
 volumes:
   plex_data:
   transmission_data:
