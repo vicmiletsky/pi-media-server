@@ -112,9 +112,26 @@ services:
       driver: none
     #restart: unless-stopped
 
+  file-browser:
+    image: filebrowser/filebrowser
+    container_name: file-browser
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Kiev
+    volumes:
+      - file_browser_data:/database
+      - /mnt:/srv
+    ports:
+      - 8080:80
+    logging:
+      driver: none
+    #restart: unless-stopped
+
 volumes:
   plex_data:
   transmission_data:
   jackett_data:
   sonarr_data:
   radarr_data:
+  file_browser_data:
