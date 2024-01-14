@@ -159,7 +159,7 @@ services:
       - "445:445/tcp"
     volumes:
       - /mnt:/media
-    command: '-s "media;/media;yes;no;yes;" -p'
+    command: '-s "Movies;/media/Samsung_T5/Movies;yes;no;yes;" -s "TV_Shows;/media/Samsung_T5/TV\ Shows;yes;no;yes;" -p'
     #restart: unless-stopped
 
 volumes:
