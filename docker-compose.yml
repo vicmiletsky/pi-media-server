@@ -141,6 +141,27 @@ services:
       MINIDLNA_FRIENDLY_NAME: "Raspberry Media Server"
     #restart: unless-stopped
 
+  samba:
+    image: dperson/samba
+    container_name: samba
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    environment:
+      TZ: Europe/Kiev
+      USERID: 1000
+      GROUPID: 1000
+    ports:
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139/tcp"
+      - "445:445/tcp"
+    volumes:
+      - /mnt:/media
+    command: '-s "media;/media;yes;no;yes;" -p'
+    #restart: unless-stopped
+
 volumes:
   plex_data:
   transmission_data:
