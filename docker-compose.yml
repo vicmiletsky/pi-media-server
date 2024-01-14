@@ -128,6 +128,19 @@ services:
       driver: none
     #restart: unless-stopped
 
+  minidlna:
+    image: vladgh/minidlna
+    container_name: minidlna
+    volumes:
+      - /mnt/:/media
+    network_mode: host
+    environment:
+      TZ: Europe/Kiev
+      MINIDLNA_MEDIA_DIR_1: "/media/Samsung_T5/Movies"
+      MINIDLNA_MEDIA_DIR_2: "/media/Samsung_T5/TV Shows"
+      MINIDLNA_FRIENDLY_NAME: "Raspberry Media Server"
+    #restart: unless-stopped
+
 volumes:
   plex_data:
   transmission_data:
