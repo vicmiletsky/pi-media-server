@@ -53,8 +53,8 @@ services:
       - jellyfin_cache:/cache
       - /media/Samsung_T5/Movies:/media/Movies
       - /media/Samsung_T5/TV\ Shows:/media/Samsung_T5/TV\ Shows
-    logging:
-      driver: none
+    #logging:
+    #  driver: none
     #restart: unless-stopped
 
   transmission:
