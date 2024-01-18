@@ -52,7 +52,7 @@ services:
       - jellyfin_config:/config
       - jellyfin_cache:/cache
       - /mnt/Samsung_T5/Movies:/media/Movies
-      - /mnt/Samsung_T5/TV Shows:"/media/TV Shows"
+      - /mnt/Samsung_T5/TV Shows:/media/TV Shows
     #logging:
     #  driver: none
     #restart: unless-stopped
