@@ -43,6 +43,20 @@ services:
       driver: none
     #restart: unless-stopped
 
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: host
+    user: 1000:1000
+    volumes:
+      - jellyfin_config:/config
+      - jellyfin_cache:/cache
+      - /media/Samsung_T5/Movies:/media/Movies
+      - /media/Samsung_T5/TV\ Shows:/media/Samsung_T5/TV\ Shows
+    logging:
+      driver: none
+    #restart: unless-stopped
+
   transmission:
     image: linuxserver/transmission
     container_name: transmission
@@ -139,6 +153,8 @@ services:
       MINIDLNA_MEDIA_DIR_1: "/media/Samsung_T5/Movies"
       MINIDLNA_MEDIA_DIR_2: "/media/Samsung_T5/TV Shows"
       MINIDLNA_FRIENDLY_NAME: "Raspberry Media Server"
+    logging:
+      driver: none
     #restart: unless-stopped
 
   samba:
@@ -160,6 +176,8 @@ services:
     volumes:
       - /mnt:/media
     command: '-s "Movies;/media/Samsung_T5/Movies;yes;no;yes;" -s "TV_Shows;/media/Samsung_T5/TV\ Shows;yes;no;yes;" -p'
+    logging:
+      driver: none
     #restart: unless-stopped
 
 volumes:
@@ -169,3 +187,5 @@ volumes:
   sonarr_data:
   radarr_data:
   file_browser_data:
+  jellyfin_cache:
+  jellyfin_config:
