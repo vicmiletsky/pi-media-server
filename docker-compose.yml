@@ -43,19 +43,19 @@ services:
       driver: none
     #restart: unless-stopped
 
-  jellyfin:
-    image: jellyfin/jellyfin:latest
-    container_name: jellyfin
-    network_mode: host
-    user: 1000:1000
-    volumes:
-      - jellyfin_config:/config
-      - jellyfin_cache:/cache
-      - /mnt/Samsung_T5/Movies:/media/Movies
-      - /mnt/Samsung_T5/TV Shows:/media/TV Shows
-    #logging:
-    #  driver: none
-    #restart: unless-stopped
+  #jellyfin:
+  #  image: jellyfin/jellyfin:latest
+  #  container_name: jellyfin
+  #  network_mode: host
+  #  user: 1000:1000
+  #  volumes:
+  #    - jellyfin_config:/config
+  #    - jellyfin_cache:/cache
+  #    - /mnt/Samsung_T5/Movies:/media/Movies
+  #    - /mnt/Samsung_T5/TV Shows:/media/TV Shows
+  #logging:
+  #  driver: none
+  #restart: unless-stopped
 
   transmission:
     image: linuxserver/transmission
