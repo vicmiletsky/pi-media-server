@@ -51,8 +51,8 @@ services:
     volumes:
       - jellyfin_config:/config
       - jellyfin_cache:/cache
-      - /media/Samsung_T5/Movies:/media/Movies
-      - /media/Samsung_T5/TV\ Shows:/media/Samsung_T5/TV\ Shows
+      - /mnt/Samsung_T5/Movies:/media/Movies
+      - /mnt/Samsung_T5/TV\ Shows:"/media/TV Shows"
     #logging:
     #  driver: none
     #restart: unless-stopped
