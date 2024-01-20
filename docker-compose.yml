@@ -18,7 +18,7 @@ services:
     devices:
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/vcsm-cma:/dev/vcsm"
-      - "/dev/sdb2:/dev/sdb2"
+      - "/dev/sda2:/dev/sda2"
     ports:
       - 8888:8888
     logging:
