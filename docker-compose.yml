@@ -13,12 +13,12 @@ services:
       - /etc:/dockerhost/etc:ro
       - /proc:/dockerhost/proc:ro
       - /usr/lib:/dockerhost/usr/lib:ro
-      - /mnt/Samsung_T5:/mnt/Samsung_T5:ro
+      - /mnt/Seagate8TB:/mnt/Seagate8TB:ro
       - ./rpi-monitor/templates/usb_hdd.conf:/etc/rpimonitor/template/usb_hdd.conf
     devices:
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/vcsm-cma:/dev/vcsm"
-      - "/dev/sda1:/dev/sda1"
+      - "/dev/sdb2:/dev/sdb2"
     ports:
       - 8888:8888
     logging:
@@ -51,8 +51,8 @@ services:
   #  volumes:
   #    - jellyfin_config:/config
   #    - jellyfin_cache:/cache
-  #    - /mnt/Samsung_T5/Movies:/media/Movies
-  #    - /mnt/Samsung_T5/TV Shows:/media/TV Shows
+  #    - /mnt/Seagate8TB/Movies:/media/Movies
+  #    - /mnt/Seagate8TB/Shows:/media/Shows
   #logging:
   #  driver: none
   #restart: unless-stopped
@@ -87,7 +87,7 @@ services:
       - TZ=Europe/Kiev
     volumes:
       - jackett_data:/config
-      - /mnt/Samsung_T5/:/downloads
+      - /mnt/Seagate8TB/:/downloads
     ports:
       - 9117:9117
     logging:
@@ -150,8 +150,8 @@ services:
     network_mode: host
     environment:
       TZ: Europe/Kiev
-      MINIDLNA_MEDIA_DIR_1: "/media/Samsung_T5/Movies"
-      MINIDLNA_MEDIA_DIR_2: "/media/Samsung_T5/TV Shows"
+      MINIDLNA_MEDIA_DIR_1: "/media/Seagate8TB/Movies"
+      MINIDLNA_MEDIA_DIR_2: "/media/Seagate8TB/Shows"
       MINIDLNA_FRIENDLY_NAME: "Raspberry Media Server"
     logging:
       driver: none
@@ -175,7 +175,7 @@ services:
       - "445:445/tcp"
     volumes:
       - /mnt:/media
-    command: '-s "Movies;/media/Samsung_T5/Movies;yes;no;yes;" -s "TV_Shows;/media/Samsung_T5/TV\ Shows;yes;no;yes;" -p'
+    command: '-s "Movies;/media/Seagate8TB/Movies;yes;no;yes;" -s "Shows;/media/Seagate8TB/Shows;yes;no;yes;" -p'
     logging:
       driver: none
     #restart: unless-stopped
