@@ -43,20 +43,6 @@ services:
       driver: none
     #restart: unless-stopped
 
-  #jellyfin:
-  #  image: jellyfin/jellyfin:latest
-  #  container_name: jellyfin
-  #  network_mode: host
-  #  user: 1000:1000
-  #  volumes:
-  #    - jellyfin_config:/config
-  #    - jellyfin_cache:/cache
-  #    - /mnt/Seagate8TB/Movies:/media/Movies
-  #    - /mnt/Seagate8TB/Shows:/media/Shows
-  #logging:
-  #  driver: none
-  #restart: unless-stopped
-
   transmission:
     image: linuxserver/transmission
     container_name: transmission
@@ -99,6 +85,17 @@ services:
       - 6881:6881
       - 6881:6881/udp
       - 58846:58846 #optional
+    #restart: unless-stopped
+
+  deluge-ui:
+    image: ghcr.io/relvacode/storm
+    container_name: deluge-ui
+    environment:
+      - DELUGE_RPC_HOSTNAME=deluge
+      - DELUGE_RPC_USERNAME=admin
+      - DELUGE_RPC_PASSWORD=deluge
+    ports:
+      - 8113:8112
     #restart: unless-stopped
 
   jackett:
@@ -170,7 +167,7 @@ services:
     image: vladgh/minidlna
     container_name: minidlna
     volumes:
-      - /mnt/:/media
+      - /mnt:/media
     network_mode: host
     environment:
       TZ: Europe/Kiev
@@ -212,5 +209,3 @@ volumes:
   radarr_data:
   file_browser_data:
   deluge_data:
-  jellyfin_cache:
-  jellyfin_config:
