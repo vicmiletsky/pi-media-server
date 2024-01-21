@@ -100,7 +100,7 @@ services:
       - DELUGE_RPC_HOSTNAME=deluge
       - DELUGE_RPC_PORT=58846
       - DELUGE_RPC_USERNAME=localclient
-      - DELUGE_RPC_PASSWORD=
+      - DELUGE_RPC_PASSWORD=109c05537b4c56a3a19cda5436e27348df923d87
     ports:
       - 8221:8221
     #restart: unless-stopped
