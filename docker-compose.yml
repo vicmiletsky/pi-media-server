@@ -1,4 +1,4 @@
-version: "3"
+version: "2.4"
 services:
 
   rpi-monitor:
@@ -60,13 +60,9 @@ services:
       - 9091:9091
       - 49153:49153
       - 49153:49153/udp
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 500M
     logging:
       driver: none
+    cpus: 2
     #restart: unless-stopped
 
   deluge:
@@ -85,11 +81,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
       - 58846:58846
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 500M
+    cpus: 2
     #restart: unless-stopped
 
   deluge-ui:
