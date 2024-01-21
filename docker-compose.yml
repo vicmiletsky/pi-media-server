@@ -95,7 +95,7 @@ services:
       - DELUGE_RPC_USERNAME=admin
       - DELUGE_RPC_PASSWORD=deluge
     ports:
-      - 8113:8112
+      - 8221:8221
     #restart: unless-stopped
 
   jackett:
