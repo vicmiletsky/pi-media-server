@@ -180,10 +180,6 @@ services:
   samba:
     image: dperson/samba
     container_name: samba
-    deploy:
-      resources:
-        limits:
-          memory: 512m
     environment:
       TZ: Europe/Kiev
       USERID: 1000
