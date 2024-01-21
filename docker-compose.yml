@@ -84,7 +84,7 @@ services:
       - 8112:8112
       - 6881:6881
       - 6881:6881/udp
-      - 58846:58846 #optional
+      - 58846:58846
     #restart: unless-stopped
 
   deluge-ui:
@@ -92,6 +92,7 @@ services:
     container_name: deluge-ui
     environment:
       - DELUGE_RPC_HOSTNAME=deluge
+      - DELUGE_RPC_PORT=58846
       - DELUGE_RPC_USERNAME=admin
       - DELUGE_RPC_PASSWORD=deluge
     ports:
