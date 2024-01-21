@@ -65,38 +65,6 @@ services:
     cpus: 2
     #restart: unless-stopped
 
-  deluge:
-    image: lscr.io/linuxserver/deluge:latest
-    container_name: deluge
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Kyiv
-    volumes:
-      - deluge_data:/config
-      - /mnt/Seagate8TB/Downloads:/downloads
-      - /mnt/Seagate8TB:/mnt/Seagate8TB
-    ports:
-      - 8112:8112
-      - 6881:6881
-      - 6881:6881/udp
-      - 58846:58846
-    cpus: 1
-    #restart: unless-stopped
-
-  deluge-ui:
-    image: ghcr.io/relvacode/storm
-    container_name: deluge-ui
-    environment:
-      - DELUGE_RPC_VERSION=v2
-      - DELUGE_RPC_HOSTNAME=deluge
-      - DELUGE_RPC_PORT=58846
-      - DELUGE_RPC_USERNAME=localclient
-      - DELUGE_RPC_PASSWORD=109c05537b4c56a3a19cda5436e27348df923d87
-    ports:
-      - 8221:8221
-    #restart: unless-stopped
-
   jackett:
     image: linuxserver/jackett
     container_name: jackett
@@ -203,4 +171,3 @@ volumes:
   sonarr_data:
   radarr_data:
   file_browser_data:
-  deluge_data:
