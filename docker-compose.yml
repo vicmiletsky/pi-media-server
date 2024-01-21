@@ -91,6 +91,7 @@ services:
     image: ghcr.io/relvacode/storm
     container_name: deluge-ui
     environment:
+      - DELUGE_RPC_VERSION=v2
       - DELUGE_RPC_HOSTNAME=deluge
       - DELUGE_RPC_PORT=58846
       - DELUGE_RPC_USERNAME=admin
