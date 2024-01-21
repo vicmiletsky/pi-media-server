@@ -74,6 +74,11 @@ services:
       - 9091:9091
       - 49153:49153
       - 49153:49153/udp
+    deploy:
+      resources:
+        limits:
+          cpus: 4
+          memory: 500M
     logging:
       driver: none
     #restart: unless-stopped
@@ -133,6 +138,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Kiev
+      - FB_NOAUTH=true
     volumes:
       - file_browser_data:/database
       - /mnt:/srv
