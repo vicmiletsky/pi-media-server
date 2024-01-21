@@ -81,7 +81,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
       - 58846:58846
-    cpus: 2
+    cpus: 1
     #restart: unless-stopped
 
   deluge-ui:
