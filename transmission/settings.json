@@ -33,7 +33,7 @@
     "peer-socket-tos": "default",
     "pex-enabled": true,
     "port-forwarding-enabled": true,
-    "preallocation": 0,
+    "preallocation": 1,
     "prefetch-enabled": 1,
     "queue-stalled-enabled": true,
     "queue-stalled-minutes": 30,
