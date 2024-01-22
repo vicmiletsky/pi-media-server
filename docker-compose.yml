@@ -62,7 +62,7 @@ services:
       - 49153:49153/udp
     logging:
       driver: none
-    cpus: 2
+    cpus: 3
     #restart: unless-stopped
 
   jackett:
