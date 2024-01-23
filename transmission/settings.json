@@ -14,7 +14,7 @@
     "dht-enabled": true,
     "download-dir": "/mnt/Seagate8TB/Downloads",
     "download-queue-enabled": true,
-    "download-queue-size": 2,
+    "download-queue-size": 1,
     "encryption": 1,
     "idle-seeding-limit": 30,
     "idle-seeding-limit-enabled": false,
