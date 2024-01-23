@@ -15,6 +15,7 @@ services:
       - /usr/lib:/dockerhost/usr/lib:ro
       - /mnt/Seagate8TB:/mnt/Seagate8TB:ro
       - ./rpi-monitor/templates/usb_hdd.conf:/etc/rpimonitor/template/usb_hdd.conf
+      - ./rpi-monitor/templates/version.conf:/etc/rpimonitor/template/version.conf
     devices:
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/vcsm-cma:/dev/vcsm"
