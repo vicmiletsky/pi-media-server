@@ -215,6 +215,21 @@ services:
         max-size: "1mb"
         max-file: "10"
 
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - homeassistant_data:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    privileged: true
+    network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: "1mb"
+        max-file: "10"
+
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
@@ -240,3 +255,4 @@ volumes:
   file_browser_data:
   portainer_data:
   homebridge_data:
+  homeassistant_data:
