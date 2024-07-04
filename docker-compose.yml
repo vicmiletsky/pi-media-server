@@ -201,20 +201,6 @@ services:
         max-file: "10"
     #restart: unless-stopped
 
-  homebridge:
-    image: homebridge/homebridge:latest
-    container_name: homebridge
-    network_mode: host
-    volumes:
-      - homebridge_data:/homebridge
-    healthcheck:
-      disable: true
-    logging:
-      driver: json-file
-      options:
-        max-size: "1mb"
-        max-file: "10"
-
   homeassistant:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
