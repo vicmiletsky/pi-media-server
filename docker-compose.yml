@@ -201,6 +201,19 @@ services:
         max-file: "10"
     #restart: unless-stopped
 
+  homebridge:
+    image: homebridge/homebridge:latest
+    network_mode: host
+    volumes:
+      - homebridge_data:/homebridge
+    healthcheck:
+      disable: true
+    logging:
+      driver: json-file
+      options:
+        max-size: "1mb"
+        max-file: "10"
+
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
@@ -225,3 +238,4 @@ volumes:
   radarr_data:
   file_browser_data:
   portainer_data:
+  homebridge_data:
