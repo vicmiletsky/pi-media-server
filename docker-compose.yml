@@ -23,7 +23,9 @@ services:
     ports:
       - 8888:8888
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     healthcheck:
       disable: true
     #restart: unless-stopped
@@ -45,7 +47,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   transmission:
@@ -66,7 +70,9 @@ services:
       - 49153:49153
       - 49153:49153/udp
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     healthcheck:
       disable: true
     cpus: 2
@@ -87,7 +93,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   sonarr:
@@ -105,7 +113,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   radarr:
@@ -123,7 +133,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   file-browser:
@@ -142,7 +154,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   minidlna:
@@ -159,7 +173,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   samba:
@@ -180,7 +196,9 @@ services:
     healthcheck:
       disable: true
     logging:
-      driver: none
+      options:
+        max-size: "1m"
+        max-file: "10"
     #restart: unless-stopped
 
   portainer:
@@ -194,6 +212,10 @@ services:
       - portainer_data:/data
     healthcheck:
       disable: true
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "10"
 
 volumes:
   plex_data:
