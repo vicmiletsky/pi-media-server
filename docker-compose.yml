@@ -236,6 +236,7 @@ services:
   prana_rc:
     image: corvis/prana-rc:latest
     container_name: prana_rc
+    platform: linux
     ports:
       - 8881:8881
     volumes:
