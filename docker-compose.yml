@@ -208,7 +208,7 @@ services:
       - homeassistant_data:/config
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
-      - ./home-assistant/custom_components/prana:/config/custom_components/prana
+    #  - ./home-assistant/custom_components/prana:/config/custom_components/prana
     privileged: true
     network_mode: host
     logging:
@@ -233,21 +233,21 @@ services:
         max-size: "1m"
         max-file: "10"
 
-  prana_rc:
-    build:
-      context: .
-      dockerfile: prana/Dockerfile
-    container_name: prana_rc
-    ports:
-      - 8881:8881
-    volumes:
-      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
-    healthcheck:
-      disable: true
-    logging:
-      options:
-        max-size: "1m"
-        max-file: "10"
+  # prana_rc:
+  #   build:
+  #     context: .
+  #     dockerfile: prana/Dockerfile
+  #   container_name: prana_rc
+  #   ports:
+  #     - 8881:8881
+  #   volumes:
+  #     - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
+  #   healthcheck:
+  #     disable: true
+  #   logging:
+  #     options:
+  #       max-size: "1m"
+  #       max-file: "10"
 
 volumes:
   plex_data:
