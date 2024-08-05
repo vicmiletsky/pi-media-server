@@ -234,9 +234,10 @@ services:
         max-file: "10"
 
   prana_rc:
-    image: corvis/prana-rc:latest
+    build:
+      context: .
+      dockerfile: prana/Dockerfile
     container_name: prana_rc
-    platform: linux
     ports:
       - 8881:8881
     volumes:
