@@ -1,0 +1,57 @@
+{
+  "config": {
+    "abort": {},
+    "error": {
+      "unable_to_connect_to_server": "Unable to connect to Prana RC server"
+    },
+    "create_entry": {
+      "default": "Successfully connected to PranaRC server"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "connection_type": "Connection Type"
+        },
+        "description": "Choose one of the supported connection option. You will be presented with the other parameters specific to the chosen connection method on the next step.",
+        "title": "Setup Prana Recuperator connection"
+      },
+      "remote_connection": {
+        "data": {
+          "connection_type": "Connection Type",
+          "base_url": "Base URL"
+        },
+        "title": "Connection parameters"
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "unable_to_connect": "Unable to connect to the remote device. See logs for details",
+      "discovery_error": "Discovery failed. See logs for more details"
+    },
+    "step": {
+      "init": {
+        "data": {
+          "edit_key": "Page"
+        },
+        "description": "Choose existing device to edit or add a new one. \nNOTE: The discovery process might take some time (up to 10 seconds)",
+        "title": "Prana Hub Options"
+      },
+      "edit_device": {
+        "data": {
+          "addr": "BLE MAC Address",
+          "name": "Name"
+        },
+        "title": "Device Settings",
+        "description": ""
+      },
+      "discover": {
+        "data": {
+          "discovered_device": "Discovered devices"
+        },
+        "title": "Devices discovery",
+        "description": "Below are the the lis of discovered devices available for pairing. \nIf you don't see your device make sure it is turned on, located nearby and is not connected to any other device already. \nIf you still can't find yur device you can return back and add it manually by mac address."
+      }
+    }
+  }
+}
