@@ -233,6 +233,22 @@ services:
         max-size: "1m"
         max-file: "10"
 
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    volumes:
+      - /mnt/Seagate8TB/Reads/Manga:/manga
+      - /mnt/Seagate8TB/Reads/Books:/books
+      - kavita_data:/kavita/config
+    ports:
+      - 5000:5000
+    healthcheck:
+      disable: true
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "10"
+
   # prana_rc:
   #   build:
   #     context: .
@@ -259,3 +275,4 @@ volumes:
   portainer_data:
   homebridge_data:
   homeassistant_data:
+  kavita_data:
