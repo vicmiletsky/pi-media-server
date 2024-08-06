@@ -253,9 +253,9 @@ services:
     image: decentralize/caching-proxy
     container_name: kavita-proxy
     environment:
-      UPSTREAM: http://0.0.0.0:5000
+      UPSTREAM: http://kavita:5000
       MAX_SIZE: 500m
-      ALLOWED_ORIGIN: http://0.0.0.0:5000
+      ALLOWED_ORIGIN: http://kavita:5000
     ports:
       - 5555:80/tcp
     logging:
