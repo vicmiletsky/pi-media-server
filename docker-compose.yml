@@ -250,7 +250,7 @@ services:
         max-file: "10"
 
   cache-proxy:
-    image: engelhardtm/squid
+    image: sameersbn/squid:3.5.27-2
     ports:
       - 3128:3128
     logging:
