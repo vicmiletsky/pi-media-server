@@ -249,11 +249,15 @@ services:
         max-size: "1m"
         max-file: "10"
 
-  cache-proxy:
-    image: sameersbn/squid:3.5.27-2
-    container_name: cache-proxy
+  kavita-proxy:
+    image: decentralize/caching-proxy
+    container_name: kavita-proxy
+    environment:
+      UPSTREAM: http://localhost:5000
+      MAX_SIZE: 500m
+      ALLOWED_ORIGIN: http://localhost:5000
     ports:
-      - 3128:3128
+      - 5555:80/tcp
     logging:
       options:
         max-size: "1m"
