@@ -233,17 +233,6 @@ services:
         max-size: "1m"
         max-file: "10"
 
-  komga:
-    image: gotson/komga
-    container_name: komga
-    volumes:
-      - komga_data:/config
-      - /mnt/Seagate8TB/Books:/data
-    environment:
-      - TZ=Europe/Kyiv
-    ports:
-      - 25600:25600
-
   # prana_rc:
   #   build:
   #     context: .
@@ -270,4 +259,3 @@ volumes:
   portainer_data:
   homebridge_data:
   homeassistant_data:
-  komga_data:
