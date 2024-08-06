@@ -251,6 +251,7 @@ services:
 
   cache-proxy:
     image: sameersbn/squid:3.5.27-2
+    container_name: cache-proxy
     ports:
       - 3128:3128
     logging:
