@@ -249,6 +249,15 @@ services:
         max-size: "1m"
         max-file: "10"
 
+  cache-proxy:
+    image: engelhardtm/squid
+    ports:
+      - 3128:3128
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "10"
+
   # prana_rc:
   #   build:
   #     context: .
