@@ -255,7 +255,7 @@ services:
     environment:
       UPSTREAM: http://kavita:5000
       MAX_SIZE: 500m
-      ALLOWED_ORIGIN: http://kavita:5000
+      PROXY_CACHE_VALID: 10m
     ports:
       - 5555:80/tcp
     logging:
