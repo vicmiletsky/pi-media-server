@@ -59,12 +59,14 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Kyiv
+      - TRANSMISSION_WEB_HOME=/transmissionic
     volumes:
       - transmission_data:/config
       - /mnt:/mnt
       - ./transmission/settings.json:/var/lib/transmission-daemon/info/settings.json:ro
       - ./transmission/settings.json:/defaults/settings.json:ro
       - ./transmission/settings.json:/config/settings.json:ro
+      - ./transmission/transmissionic:/transmissionic
     ports:
       - 9091:9091
       - 49153:49153
