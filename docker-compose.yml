@@ -229,10 +229,30 @@ services:
       - portainer_data:/data
     healthcheck:
       disable: true
+    command: --http-enabled
     logging:
       options:
         max-size: "1m"
         max-file: "10"
+
+  photoprism:
+    image: photoprism/photoprism:latest
+    environment:
+      - PHOTOPRISM_AUTH_MODE=public
+      - PHOTOPRISM_INDEX_WORKERS=1
+      - PHOTOPRISM_DISABLE_TLS=1
+      - PHOTOPRISM_DATABASE_DRIVER=sqlite
+      - PHOTOPRISM_JPEG_QUALITY=100
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    ports:
+      - 2342:2342
+    working_dir: /photoprism
+    volumes:
+      - /mnt/Seagate8TB/Photo:/photoprism/originals
+      - /mnt/Seagate8TB/Photo/.photoprism/storage:/photoprism/storage
+      - /mnt/Seagate8TB/Photo/.photoprism/import:/photoprism/import
 
 #  kavita:
 #    image: jvmilazz0/kavita:latest
