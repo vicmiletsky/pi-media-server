@@ -245,6 +245,7 @@ services:
       - PHOTOPRISM_DISABLE_TLS=1
       - PHOTOPRISM_DATABASE_DRIVER=sqlite
       - PHOTOPRISM_JPEG_QUALITY=100
+      - PHOTOPRISM_DISABLE_TENSORFLOW=1
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
