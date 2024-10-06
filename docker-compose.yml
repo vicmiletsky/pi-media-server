@@ -250,6 +250,8 @@ services:
       - PHOTOPRISM_DISABLE_EXIFTOOL=1
       - PHOTOPRISM_DISABLE_VIPS=1
       - PHOTOPRISM_DISABLE_PLACES=1
+      - PHOTOPRISM_THUMB_FILTER=cubic
+      - PHOTOPRISM_THUMB_SIZE=720
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
