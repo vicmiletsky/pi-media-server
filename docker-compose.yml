@@ -237,6 +237,7 @@ services:
 
   photoprism:
     image: photoprism/photoprism:latest
+    container_name: photoprism
     environment:
       - PHOTOPRISM_AUTH_MODE=public
       - PHOTOPRISM_INDEX_WORKERS=1
