@@ -236,78 +236,20 @@ services:
         max-size: "1m"
         max-file: "10"
 
-  photoprism:
-    image: photoprism/photoprism:latest
-    container_name: photoprism
+  pigallery2:
+    image: bpatrik/pigallery2:latest
+    container_name: pigallery2
     environment:
-      - PHOTOPRISM_AUTH_MODE=public
-      - PHOTOPRISM_INDEX_WORKERS=4
-      - PHOTOPRISM_DISABLE_TLS=1
-      - PHOTOPRISM_DATABASE_DRIVER=sqlite
-      - PHOTOPRISM_JPEG_QUALITY=100
-      - PHOTOPRISM_DISABLE_TENSORFLOW=1
-      - PHOTOPRISM_DISABLE_FFMPEG=1
-      - PHOTOPRISM_DISABLE_EXIFTOOL=1
-      - PHOTOPRISM_DISABLE_VIPS=1
-      - PHOTOPRISM_DISABLE_PLACES=1
-      - PHOTOPRISM_THUMB_FILTER=cubic
-      - PHOTOPRISM_THUMB_SIZE=720
-    security_opt:
-      - seccomp:unconfined
-      - apparmor:unconfined
-    ports:
-      - 2342:2342
-    working_dir: /photoprism
+      - NODE_ENV=production
     volumes:
-      - /mnt/Seagate8TB/Photo:/photoprism/originals
-      - /mnt/Seagate8TB/Photo/.photoprism/storage:/photoprism/storage
-      - /mnt/Seagate8TB/Photo/.photoprism/import:/photoprism/import
+      - "pigallery2_data:/app/data/db"
+      - "pigallery2_config:/app/data/config"
+      - "./pigallery2/images:/mnt/Seagate8TB/Photo:ro"
+      - "./pigallery2/tmp:/mnt/Seagate8TB/.photo"
+    ports:
+      - 80:80
+    restart: always
 
-#  kavita:
-#    image: jvmilazz0/kavita:latest
-#    container_name: kavita
-#    volumes:
-#      - /mnt/Seagate8TB/Reads/Manga:/manga
-#      - /mnt/Seagate8TB/Reads/Books:/books
-#      - kavita_data:/kavita/config
-#    ports:
-#      - 5000:5000
-#    healthcheck:
-#      disable: true
-#    logging:
-#      options:
-#        max-size: "1m"
-#        max-file: "10"
-
-#  kavita-proxy:
-#    image: decentralize/caching-proxy
-#    container_name: kavita-proxy
-#    environment:
-#      UPSTREAM: http://kavita:5000
-#      MAX_SIZE: 500m
-#      PROXY_CACHE_VALID: 10m
-#    ports:
-#      - 5555:80/tcp
-#    logging:
-#      options:
-#        max-size: "1m"
-#        max-file: "10"
-
-  # prana_rc:
-  #   build:
-  #     context: .
-  #     dockerfile: prana/Dockerfile
-  #   container_name: prana_rc
-  #   ports:
-  #     - 8881:8881
-  #   volumes:
-  #     - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
-  #   healthcheck:
-  #     disable: true
-  #   logging:
-  #     options:
-  #       max-size: "1m"
-  #       max-file: "10"
 
 volumes:
   plex_data:
@@ -319,4 +261,5 @@ volumes:
   portainer_data:
   homebridge_data:
   homeassistant_data:
-  kavita_data:
+  pigallery2_data:
+  pigallery2_config:
