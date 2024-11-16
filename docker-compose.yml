@@ -247,7 +247,7 @@ services:
       - "./pigallery2/images:/mnt/Seagate8TB/Photo:ro"
       - "./pigallery2/tmp:/mnt/Seagate8TB/.photo"
     ports:
-      - 80:80
+      - 8088:80
     restart: always
 
 
