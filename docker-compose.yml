@@ -244,8 +244,9 @@ services:
     volumes:
       - "pigallery2_data:/app/data/db"
       - "pigallery2_config:/app/data/config"
-      - "./pigallery2/images:/mnt/Seagate8TB/Photo:ro"
-      - "./pigallery2/tmp:/mnt/Seagate8TB/.photo"
+      - "/mnt/Seagate8TB/Photo:/app/data/images:ro"
+      - "/mnt/Seagate8TB/.photo:/app/data/tmp"
+      - "./pigallery/config:/app/data/config/config.json"
     ports:
       - 8088:80
     restart: always
