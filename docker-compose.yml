@@ -245,7 +245,7 @@ services:
     container_name: wetty
     ports:
       - 3000:3000
-    command: --ssh-host=192.168.1.154 --ssh-user=victor
+    command: --ssh-host=192.168.1.154 --ssh-user=victor --ssh-auth="publickey,password" --ssh-key=/home/victor/ssh-keys/id_rsa_wetty
     healthcheck:
       disable: true
     logging:
