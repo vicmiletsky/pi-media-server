@@ -240,6 +240,18 @@ services:
         max-size: "1m"
         max-file: "10"
 
+  wetty:
+    image: wettyoss/wetty
+    container_name: wetty
+    ports:
+      - 3000:3000
+    healthcheck:
+      disable: true
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "10"
+
 
 volumes:
   plex_data:
