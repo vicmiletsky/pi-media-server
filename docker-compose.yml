@@ -197,6 +197,7 @@ services:
     command: '-s "Movies;/media/Seagate8TB/Movies;yes;no;yes;" -s\
       "Shows;/media/Seagate8TB/Shows;yes;no;yes;" -s\
       "Reads;/media/Seagate8TB/Reads;yes;no;yes;" -s\
+      "Photo;/media/Seagate8TB/Photo;yes;no;yes;" -s\
       "Downloads;/media/Seagate8TB/Downloads;yes;no;yes;" -p'
     healthcheck:
       disable: true
