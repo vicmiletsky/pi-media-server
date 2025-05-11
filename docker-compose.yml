@@ -171,6 +171,8 @@ services:
       MINIDLNA_MEDIA_DIR_1: "/media/Seagate8TB/Movies"
       MINIDLNA_MEDIA_DIR_2: "/media/Seagate8TB/Shows"
       MINIDLNA_MEDIA_DIR_3: "/media/Seagate8TB/Downloads"
+      MINIDLNA_MEDIA_DIR_4: "/media/Seagate8TB/Photo"
+      MINIDLNA_MEDIA_DIR_5: "/media/Seagate8TB/Anime"
       MINIDLNA_FRIENDLY_NAME: "Raspberry Media Server"
     healthcheck:
       disable: true
@@ -198,6 +200,7 @@ services:
       "Shows;/media/Seagate8TB/Shows;yes;no;yes;" -s\
       "Reads;/media/Seagate8TB/Reads;yes;no;yes;" -s\
       "Photo;/media/Seagate8TB/Photo;yes;no;yes;" -s\
+      "Anime;/media/Seagate8TB/Anime;yes;no;yes;" -s\
       "Downloads;/media/Seagate8TB/Downloads;yes;no;yes;" -p'
     healthcheck:
       disable: true
